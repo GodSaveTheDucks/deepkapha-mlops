@@ -1,0 +1,17 @@
+{
+  "name": "serverless-test",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {
+    "serverless-aws-latest-layer-version": "^0.2.6",
+    "serverless-iam-roles-per-function": "^3.1.0"
+  },
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "devDependencies": {
+    "serverless": "^1.67.0",
+    "serverless-python-requirements": "^5.1.0",
+    "serverless-plugin-git-variables": "^5.1.0"
+  }
+}

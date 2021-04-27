@@ -1,1 +1,1 @@
-# deepkapha-mlops
+serverless create --template aws-python
