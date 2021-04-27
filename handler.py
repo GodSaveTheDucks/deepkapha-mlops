@@ -14,7 +14,7 @@ class GetDataController(object):
     def execute(self,data_dir='data'):
         data = []
         for filename, endpoint_url in self.urls.items():
-            data.append(requests.get(endpoint_url))
+            data.append(requests.get(endpoint_url).json())
             #filename = ''.join([filename,"-",self.generate_file_name()])
         return data
 
