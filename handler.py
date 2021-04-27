@@ -12,11 +12,14 @@ class GetDataController(object):
         return str(datetime.datetime.utcnow())
         
     def execute(self,data_dir='data'):
+        data = []
         for filename, endpoint_url in self.urls.items():
-            r = requests.get(endpoint_url)
-            filename = ''.join([filename,"-",self.generate_file_name()])
-            
+            data.append(requests.get(endpoint_url))
+            #filename = ''.join([filename,"-",self.generate_file_name()])
+        return data
 
 def handle(event,context):
     controller = GetDataController()
-    controller.execute()
+    return {
+        "data" : json.dumps(controller.execute())
+    }
